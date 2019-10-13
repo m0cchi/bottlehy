@@ -6,7 +6,6 @@ clean-docker-image:
 	docker image prune -f
 
 build: clean-docker-image
-	docker build -f docker/hylang.dockerfile -t kamochi/hylang:latest .
 	docker build -f docker/app.dockerfile -t $(AUTHOR)/$(APP_NAME):latest .
 
 release: build
